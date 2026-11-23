@@ -34,6 +34,12 @@ Designed the workflow across MS Access and Excel, then built a Tableau dashboard
 
 The workflow gives teams a consistent way to locate quality gaps, prioritize issue resolution, and review readiness before submission. Reported measures describe the project analysis, not clinical outcomes.
 
+## Dashboard preview
+
+![Clinical Data Quality Monitoring Dashboard](https://public.tableau.com/views/ClinicalDataQualityMonitoringDashboard/Dashboard1.png?:showVizHome=no)
+
+[Open the interactive Tableau dashboard](https://public.tableau.com/app/profile/vaishnavi.amruthala8328/viz/ClinicalDataQualityMonitoringDashboard/Dashboard1)
+
 ## Project files
 
 - [Tableau dashboard workbook](tableau/Clinical_Data_Liaison_Dashboard.twb)
