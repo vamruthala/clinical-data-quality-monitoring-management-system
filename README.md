@@ -1,54 +1,42 @@
 # Clinical Data Quality Monitoring & Management System
 
-A simulated longitudinal autism study workflow for monitoring data quality from collection through Data Coordinating Center (DCC) submission.
+A clinical data-management case study showing how study teams can monitor data quality from collection through Data Coordinating Center (DCC) submission.
 
 ## Business question
 
-How can study teams find incomplete records, QC failures, and submission blockers early across research sites and data streams?
+How can teams detect incomplete records, QC failures, and submission blockers across sites and data streams?
 
-## My role
+## Role and approach
 
-Designed the clinical data management workflow across MS Access and Excel, then built a Tableau dashboard to monitor quality, issue triage, and submission progress.
+Designed the workflow across MS Access and Excel, then built a Tableau dashboard for completeness, QC, issue triage, and submission progress.
 
-## Study scope
+`Clinical assessments / EEG / wearable / biospecimen`
+→ participant and metadata tracking
+→ validation checks
+→ issue triage and SLA tracking
+→ Tableau monitoring
+→ DCC readiness review
 
-- **Study:** Simulated longitudinal study with 300 participants across four research sites.
-- **Data streams:** Clinical assessments, EEG, wearable, and biospecimen.
-- **Data status:** Simulation results; no real patient records are represented in this portfolio summary.
+## Scope and reported measures
 
-## Project pipeline
+- 300 participants across 4 research sites; 4 data streams.
+- 5,324 validation checks; 891 issues tracked through triage.
+- 94% reported overall completeness; 91% reported submission readiness.
 
-```mermaid
-flowchart LR
-  A[Clinical, EEG, wearable, biospecimen data] --> B[Participant tracking, metadata, data dictionary]
-  B --> C[Automated validation checks]
-  C --> D[Issue triage by root cause and severity]
-  D --> E[SLA and submission tracking]
-  E --> F[Tableau quality dashboard]
-  F --> G[DCC submission readiness]
-```
-
-1. **Organize:** Standardized participant, record, and metadata tracking across study streams.
-2. **Validate:** Executed 5,324 automated data-quality checks.
-3. **Triage:** Tracked 891 issues by root cause and severity, with resolution and SLA monitoring.
-4. **Monitor:** Built Tableau views for completeness, QC pass status, open issues, root causes, and DCC submission progress.
-5. **Prepare:** Used readiness reporting to focus review before DCC submission.
-
-## Measures and formulas
-
-| Measure | Meaning and interpretation |
+| Measure / formula | How to interpret it |
 |---|---|
-| Overall data completeness | Reported at **94%** for the simulation. Tableau converts the average source completeness score to a fraction with `AVG([Completeness_Pct]) / 100`. |
-| Submission readiness | Reported at **91%**. The project summary does not specify its calculation rule, so this is presented as a reported result rather than a reconstructed formula. |
-| Form completion flag | `IF [Form_Complete] = "Yes" THEN 1 ELSE 0 END` converts complete/incomplete status into a binary flag for dashboard aggregation. |
-| QC pass flag | `IF [Status Pass] = "Pass" THEN 1 ELSE 0 END` marks records that passed QC for dashboard monitoring. |
-| Validation checks and issues | **5,324** checks were executed and **891** data-quality issues were tracked through triage. |
+| Completeness: `AVG([Completeness_Pct]) / 100` | Converts the average source score to a 0–1 fraction; 0.94 corresponds to 94%. |
+| Form completion: `IF [Form_Complete] = "Yes" THEN 1 ELSE 0 END` | Converts each form to a binary flag for completion-rate aggregation. |
+| QC pass: `IF [Status Pass] = "Pass" THEN 1 ELSE 0 END` | Flags records passing QC for dashboard monitoring. |
+| Submission readiness | Reported as 91%; the source summary does not define its calculation rule. |
 
 ## Business value
 
-The workflow gives study teams a consistent view of data completeness, QC, unresolved issues, and submission readiness. The reported readiness and completeness figures come from a simulation; they are not production clinical outcomes.
+The workflow gives teams a consistent way to locate quality gaps, prioritize issue resolution, and review readiness before submission. Reported measures describe the project analysis, not clinical outcomes.
 
-## Portfolio evidence
+## Project files
 
-This review draft contains the project summary and pipeline only. It does not include participant-level workbook data or the full project report. The local Tableau workbook depends on a separate source workbook, so the dashboard file is not included as a standalone download.
+- [Tableau dashboard workbook](tableau/Clinical_Data_Liaison_Dashboard.twb)
+- [Excel source workbook](data/Clinical_Data_Liaison_LNHS_Workbook.xlsx)
 
+The Tableau workbook references the original local source path. If Tableau prompts for a missing source, connect it to the included Excel workbook in `data/`.
