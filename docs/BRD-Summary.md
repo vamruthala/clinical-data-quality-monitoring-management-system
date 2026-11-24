@@ -1,7 +1,4 @@
 # Business Requirements Summary
-
-*Condensed from the project report; not a formally approved BRD.*
-
 - **Business question:** How can study teams find incomplete records, QC failures, and submission blockers early?
 - **Scope:** 300 participants, four sites, and clinical, EEG, wearable, and biospecimen data.
 - **Decision supported:** Prioritize quality issues and review readiness before DCC submission.
