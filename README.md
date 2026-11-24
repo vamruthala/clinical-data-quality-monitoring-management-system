@@ -34,16 +34,20 @@ flowchart LR
 4. **Monitor:** Built Tableau views for completeness, QC pass status, open issues, root causes, and DCC submission progress.
 5. **Prepare:** Used readiness reporting to focus review before DCC submission.
 
-## Measures and formulas
+## Business KPIs
 
-| Measure | Meaning and interpretation |
-|---|---|
-| Overall data completeness | Reported at **94%**. Tableau converts the average source completeness score to a fraction with `AVG([Completeness_Pct]) / 100`. |
-| Submission readiness | Reported at **91%**. The project summary does not specify its calculation rule, so this is presented as a reported result rather than a reconstructed formula. |
-| Form completion flag | `IF [Form_Complete] = "Yes" THEN 1 ELSE 0 END` converts complete/incomplete status into a binary flag for dashboard aggregation. |
-| QC pass flag | `IF [Status Pass] = "Pass" THEN 1 ELSE 0 END` marks records that passed QC for dashboard monitoring. |
-| Validation checks and issues | **5,324** checks were executed and **891** data-quality issues were tracked through triage. |
+| KPI / formula | Reported value | Meaning and interpretation |
+|---|---:|---|
+| Overall data completeness: `AVG([Completeness_Pct]) / 100` | **94%** | Average source completeness; leaves a 6-point gap to full completeness. |
+| Submission readiness | **91%** | Leaves a 9-point gap; the source does not specify its calculation rule. |
+| Validation checks executed | **5,324** | Number of quality checks run. |
+| Issues tracked | **891** | Issues moved through triage; no target issue-rate KPI is defined. |
+| Form completion flag: `IF [Form_Complete] = "Yes" THEN 1 ELSE 0 END` | Dashboard measure | Binary completion status for aggregation. |
+| QC pass flag: `IF [Status Pass] = "Pass" THEN 1 ELSE 0 END` | Dashboard measure | Binary pass status for QC monitoring. |
 
+## Model Metrics
+
+No predictive or statistical model was reported; this is a data-quality monitoring workflow. Accuracy, AUC, and prediction error are **not applicable**. Completeness, readiness, check counts, and issue counts are operational KPIs.
 
 ## Key insights and recommendations
 
@@ -69,6 +73,7 @@ The workflow gives study teams a consistent view of data completeness, QC, unres
 - `assets/` — selected dashboard images.
 
 The Tableau workbook may prompt you to reconnect its Excel source to the copy in `data/` when opened on another computer.
+
 
 
 
