@@ -1,7 +1,4 @@
 # Functional Requirements Summary
-
-*Report-based summary of the designed workflow.*
-
 - Track participants, study metadata, and data dictionary across four data streams.
 - Run validation checks and classify issues by root cause/severity.
 - Track issue resolution, SLA, and submission readiness.
