@@ -1,48 +1,70 @@
 # Clinical Data Quality Monitoring & Management System
 
-A clinical data-management case study showing how study teams can monitor data quality from collection through Data Coordinating Center (DCC) submission.
+A clinical data-management case study focused on study data quality from collection through Data Coordinating Center (DCC) submission.
 
 ## Business question
 
-How can teams detect incomplete records, QC failures, and submission blockers across sites and data streams?
+How can study teams find incomplete records, QC failures, and submission blockers early across research sites and data streams?
 
-## Role and approach
+## My role
 
-Designed the workflow across MS Access and Excel, then built a Tableau dashboard for completeness, QC, issue triage, and submission progress.
+Designed the clinical data management workflow across MS Access and Excel, then built a Tableau dashboard to monitor quality, issue triage, and submission progress.
 
-`Clinical assessments / EEG / wearable / biospecimen`
-→ participant and metadata tracking
-→ validation checks
-→ issue triage and SLA tracking
-→ Tableau monitoring
-→ DCC readiness review
+## Study scope
 
-## Scope and reported measures
+- **Study scope:** Longitudinal study data model covering 300 participants across four research sites.
+- **Data streams:** Clinical assessments, EEG, wearable, and biospecimen.
 
-- 300 participants across 4 research sites; 4 data streams.
-- 5,324 validation checks; 891 issues tracked through triage.
-- 94% reported overall completeness; 91% reported submission readiness.
+## Project pipeline
 
-| Measure / formula | How to interpret it |
+```mermaid
+flowchart LR
+  A[Clinical, EEG, wearable, biospecimen data] --> B[Participant tracking, metadata, data dictionary]
+  B --> C[5,324 automated quality checks]
+  C --> D[891 issues triaged by cause and severity]
+  D --> E[Resolution and SLA monitoring]
+  E --> F[Tableau quality dashboard]
+  F --> G[Review completeness, QC, and readiness]
+  G --> H[DCC submission preparation]
+```
+
+1. **Organize:** Standardized participant, record, and metadata tracking across study streams.
+2. **Validate:** Executed 5,324 automated data-quality checks.
+3. **Triage:** Tracked 891 issues by root cause and severity, with resolution and SLA monitoring.
+4. **Monitor:** Built Tableau views for completeness, QC pass status, open issues, root causes, and DCC submission progress.
+5. **Prepare:** Used readiness reporting to focus review before DCC submission.
+
+## Measures and formulas
+
+| Measure | Meaning and interpretation |
 |---|---|
-| Completeness: `AVG([Completeness_Pct]) / 100` | Converts the average source score to a 0–1 fraction; 0.94 corresponds to 94%. |
-| Form completion: `IF [Form_Complete] = "Yes" THEN 1 ELSE 0 END` | Converts each form to a binary flag for completion-rate aggregation. |
-| QC pass: `IF [Status Pass] = "Pass" THEN 1 ELSE 0 END` | Flags records passing QC for dashboard monitoring. |
-| Submission readiness | Reported as 91%; the source summary does not define its calculation rule. |
+| Overall data completeness | Reported at **94%**. Tableau converts the average source completeness score to a fraction with `AVG([Completeness_Pct]) / 100`. |
+| Submission readiness | Reported at **91%**. The project summary does not specify its calculation rule, so this is presented as a reported result rather than a reconstructed formula. |
+| Form completion flag | `IF [Form_Complete] = "Yes" THEN 1 ELSE 0 END` converts complete/incomplete status into a binary flag for dashboard aggregation. |
+| QC pass flag | `IF [Status Pass] = "Pass" THEN 1 ELSE 0 END` marks records that passed QC for dashboard monitoring. |
+| Validation checks and issues | **5,324** checks were executed and **891** data-quality issues were tracked through triage. |
 
+
+## Key insights and recommendations
+
+- **94% data completeness** leaves a 6-point gap to full completeness; use the completeness view to identify which sites/data streams contribute most to the remaining gaps.
+- **91% submission readiness** leaves a 9-point gap to full readiness; resolve blockers before the next DCC submission review.
+- **891 tracked issues** across **5,324 checks** make root-cause, severity, and SLA prioritization central to the workflow. The project source does not define a target issue-rate KPI, so these counts are not converted into one.
+
+Recommended next steps are to focus QC follow-up on the largest completeness gaps, triage high-severity or overdue issues first, and confirm readiness criteria with the DCC before submission. These are workflow recommendations; the project does not claim measured post-implementation outcomes.
 ## Business value
 
-The workflow gives teams a consistent way to locate quality gaps, prioritize issue resolution, and review readiness before submission. Reported measures describe the project analysis, not clinical outcomes.
+The workflow gives study teams a consistent view of data completeness, QC, unresolved issues, and submission readiness. The reported figures describe this project and are not clinical outcome claims.
 
-## Dashboard preview
-
-![Clinical Data Quality Monitoring Dashboard](https://public.tableau.com/views/ClinicalDataQualityMonitoringDashboard/Dashboard1.png?:showVizHome=no)
-
-[Open the interactive Tableau dashboard](https://public.tableau.com/app/profile/vaishnavi.amruthala8328/viz/ClinicalDataQualityMonitoringDashboard/Dashboard1)
+## Portfolio evidence
 
 ## Project files
 
-- [Tableau dashboard workbook](tableau/Clinical_Data_Liaison_Dashboard.twb)
-- [Excel source workbook](data/Clinical_Data_Liaison_LNHS_Workbook.xlsx)
+- `tableau/Clinical_Data_Liaison_Dashboard.twb` — Tableau dashboard workbook.
+- `data/Clinical_Data_Liaison_LNHS_Workbook.xlsx` — Excel source workbook used by the dashboard.
+- `assets/` — selected dashboard images.
 
-The Tableau workbook references the original local source path. If Tableau prompts for a missing source, connect it to the included Excel workbook in `data/`.
+The Tableau workbook may prompt you to reconnect its Excel source to the copy in `data/` when opened on another computer.
+
+
+
