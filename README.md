@@ -52,6 +52,10 @@ flowchart LR
 - **891 tracked issues** across **5,324 checks** make root-cause, severity, and SLA prioritization central to the workflow. The project source does not define a target issue-rate KPI, so these counts are not converted into one.
 
 Recommended next steps are to focus QC follow-up on the largest completeness gaps, triage high-severity or overdue issues first, and confirm readiness criteria with the DCC before submission. These are workflow recommendations; the project does not claim measured post-implementation outcomes.
+## Dashboard preview
+
+![Clinical Data Quality Monitoring Dashboard](assets/dashboard-overview.png)
+
 ## Business value
 
 The workflow gives study teams a consistent view of data completeness, QC, unresolved issues, and submission readiness. The reported figures describe this project and are not clinical outcome claims.
@@ -65,6 +69,7 @@ The workflow gives study teams a consistent view of data completeness, QC, unres
 - `assets/` — selected dashboard images.
 
 The Tableau workbook may prompt you to reconnect its Excel source to the copy in `data/` when opened on another computer.
+
 
 
 
