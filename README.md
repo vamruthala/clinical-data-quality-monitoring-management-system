@@ -68,13 +68,17 @@ The workflow gives study teams a consistent view of data completeness, QC, unres
 
 ## Project files
 
-- `tableau/Clinical_Data_Liaison_Dashboard.twb` — Tableau dashboard workbook.
 - `data/Clinical_Data_Liaison_LNHS_Workbook.xlsx` — Excel source workbook used by the dashboard.
 - `assets/` — selected dashboard images.
 
-The Tableau workbook may prompt you to reconnect its Excel source to the copy in `data/` when opened on another computer.
+The matching Excel source is included. A packaged `.twbx` is not available, so the standalone Tableau workbook is omitted.
 
+## Supporting documents
 
+- [Executive summary](docs/Executive-Summary.md)
+- [Business requirements summary](docs/BRD-Summary.md)
+- [Functional requirements summary](docs/FRD-Summary.md)
 
+The source reports do not document an existing-state (As-Is) process; none is presented as fact.
 
 
