@@ -58,7 +58,7 @@ No predictive or statistical model was reported; this is a data-quality monitori
 Recommended next steps are to focus QC follow-up on the largest completeness gaps, triage high-severity or overdue issues first, and confirm readiness criteria with the DCC before submission. These are workflow recommendations; the project does not claim measured post-implementation outcomes.
 ## Dashboard preview
 
-![Clinical Data Quality Monitoring Dashboard from Tableau Public](assets/dashboard-overview.png)
+![Clinical Data Quality Monitoring Dashboard from Tableau Public](data_visualization_and_analysis/dashboard-overview.png)
 
 ## Business value
 
@@ -69,7 +69,7 @@ The workflow gives study teams a consistent view of data completeness, QC, unres
 ## Project files
 
 - `data/Clinical_Data_Liaison_LNHS_Workbook.xlsx` — Excel source workbook used by the dashboard.
-- `assets/` — selected dashboard images from Tableau Public.
+- `data_visualization_and_analysis/` — selected dashboard images from Tableau Public.
 
 
 ## Supporting documents
